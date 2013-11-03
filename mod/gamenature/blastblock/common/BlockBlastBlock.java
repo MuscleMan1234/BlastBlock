@@ -19,7 +19,7 @@ public class BlockBlastBlock extends Block {
  public BlockBlastBlock(int par1, String texture) {
   super(par1, Material.rock);
   this.texture = texture;
-  setHardness(10.0F);
+  setHardness(5.0F);
   setResistance(2000.0F);
   setStepSound(soundStoneFootstep);
  }
