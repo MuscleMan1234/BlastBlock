@@ -54,10 +54,10 @@ public class BlastBlock {
 
 		//Language Registry
 		LanguageRegistry.addName(blastblock, "Blast Resistant Stone");
-		LanguageRegistry.addName(blastsingle, "Blast Resistant Slab");
 
 		//Crafting Recipe
 		GameRegistry.addRecipe(new ItemStack(blastblock), "xxx", "iii", "xxx" , 'x', Block.stone, 'i', Block.obsidian);
+		GameRegistry.addRecipe(new ItemStack(blastsingle,6), "xxx" , 'x', blastblock);
 		
 		//Slab Language
 		LanguageRegistry.instance().addStringLocalization(((BlockHalfSlab)blastsingle).getFullSlabName(0)+".name", "Blast Resistant Slab");
