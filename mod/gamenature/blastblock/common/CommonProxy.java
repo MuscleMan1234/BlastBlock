@@ -1,5 +1,10 @@
 package mod.gamenature.blastblock.common;
 
-public class CommonProxy {
+import net.minecraftforge.oredict.OreDictionary;
 
+public class CommonProxy {
+        
+        public void registerRenderThings() {
+
+  }
 }
