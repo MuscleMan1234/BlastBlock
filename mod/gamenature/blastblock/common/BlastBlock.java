@@ -21,7 +21,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class BlastBlock {
 
 
-	@Instance("easygunpowder")
+	@Instance("blastblock")
 	public static BlastBlock instance;
 
 	// Proxy defs
@@ -39,10 +39,10 @@ public class BlastBlock {
 		blastblock = new BlockBlastBlock(1092, "blastblock").setUnlocalizedName("blastblock:blast").setCreativeTab(CreativeTabs.tabBlock);
 
 		//Block Registry
-		GameRegistry.registerBlock(blastblock, "Sulfir");
+		GameRegistry.registerBlock(blastblock, "blastblock");
 
 		//Language Registry
-		LanguageRegistry.addName(blastblock, "Blastproof Stone");
+		LanguageRegistry.addName(blastblock, "Blast Resistant Stone");
 
 		//Crafting Recipe
 		GameRegistry.addRecipe(new ItemStack(blastblock), "xxx", "xxx", "xxx" , 'x', Item.gunpowder);
