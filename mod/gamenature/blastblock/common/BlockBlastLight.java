@@ -14,20 +14,20 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 
 public class BlockBlastLight extends Block {
 
- String texture;
- 
- public BlockBlastLight(int par1, String texture) {
-  super(par1, Material.rock);
-  this.texture = texture;
-  setHardness(5.0F);
-  setResistance(2000.0F);
-  setStepSound(soundStoneFootstep);
- }
+	String texture;
 
-public int idDropped(int par1, Random par2Random, int three)
-{
-         return this.blockID;
-}
+	public BlockBlastLight(int par1, String texture) {
+		super(par1, Material.rock);
+		this.texture = texture;
+		setHardness(5.0F);
+		setResistance(2000.0F);
+		setStepSound(soundStoneFootstep);
+	}
+
+	public int idDropped(int par1, Random par2Random, int three)
+	{
+		return this.blockID;
+	}
 
 
 }
