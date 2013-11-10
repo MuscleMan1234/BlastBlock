@@ -34,6 +34,7 @@ public class BlastBlock {
 
 	//Block Declarations
 	public static Block blastblock;
+	public static Block blastlight;
 	
 	//Special/Technical Blocks
     //slabs
@@ -45,9 +46,10 @@ public class BlastBlock {
 
 		//Block Declares go here!
 		blastblock = new BlockBlastBlock(3997, "blastblock").setUnlocalizedName("blastblock:blast").setCreativeTab(CreativeTabs.tabBlock).setTextureName("blastblock:concrete");
+		blastlight= new BlockBlastLight(4000, "blastblock").setUnlocalizedName("blastblock:blast").setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F).setTextureName("blastblock:concrete");
 		
-		blastdouble = (BlockHalfSlab)(new BlockBlastSlab(3998, true)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("rubydouble").setTextureName("blastblock:concrete");
-        blastsingle = (BlockHalfSlab)(new BlockBlastSlab(3999, false)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("rubysingle").setCreativeTab(CreativeTabs.tabBlock).setTextureName("blastblock:concrete");
+		blastdouble = (BlockHalfSlab)(new BlockBlastSlab(3998, true)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("rubydouble").setTextureName("blastblock:concrete");
+        blastsingle = (BlockHalfSlab)(new BlockBlastSlab(3999, false)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("rubysingle").setCreativeTab(CreativeTabs.tabBlock).setTextureName("blastblock:concrete");
 		
 		//Block Registry
 		GameRegistry.registerBlock(blastblock, "blastblock");
