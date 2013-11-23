@@ -31,24 +31,24 @@ public class BlastBlock {
 	@SidedProxy(clientSide="mod.gamenature.blastblock.client.ClientProxy", serverSide="mod.gamenature.blastblock.common.CommonProxy")
 	public static CommonProxy proxy;
 
-
 	//Block Declarations
 	public static Block blastblock;
 	public static Block blastlight;
+	
+	//New Lighting related Blocks!
 	public static Block blastLampOn;
 	public static Block blastLampOff;
-
-	//Special/Technical Blocks
-	//slabs
-	public static BlockHalfSlab blastsingle;
-	public static BlockHalfSlab blastdouble;
-
+	
 	//Creative Tab
 	public static CreativeTabs tabBlastBlock = new CreativeTabs("tabCustom") {
 		public ItemStack getIconItemStack() {
 			return new ItemStack(blastblock, 1, 0);
 		}
 	};
+
+	//slabs
+	public static BlockHalfSlab blastsingle;
+	public static BlockHalfSlab blastdouble;
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
