@@ -43,19 +43,28 @@ public class BlastBlock {
 	public static BlockHalfSlab blastsingle;
 	public static BlockHalfSlab blastdouble;
 
+	//Creative Tab
+	public static CreativeTabs tabBlastBlock = new CreativeTabs("tabCustom") {
+		public ItemStack getIconItemStack() {
+			return new ItemStack(blastblock, 1, 0);
+		}
+	};
+
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 
+
+
 		//Block Declares go here!
-		blastblock = new BlockBlastBlock(3974, "blastblock").setUnlocalizedName("blastblock:blast").setCreativeTab(CreativeTabs.tabBlock).setTextureName("blastblock:concrete");
-		blastlight= new BlockBlastLight(3975, "blastblock").setUnlocalizedName("blastblock:blastlight").setCreativeTab(CreativeTabs.tabBlock).setLightValue(1.0F).setTextureName("blastblock:light");
-		
+		blastblock = new BlockBlastBlock(3974, "blastblock").setUnlocalizedName("blastblock:blast").setCreativeTab(tabBlastBlock).setTextureName("blastblock:concrete");
+		blastlight= new BlockBlastLight(3975, "blastblock").setUnlocalizedName("blastblock:blastlight").setCreativeTab(tabBlastBlock).setLightValue(1.0F).setTextureName("blastblock:light");
+
 		blastdouble = (BlockHalfSlab)(new BlockBlastSlab(3976, true)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("rubydouble").setTextureName("blastblock:concrete");
-		blastsingle = (BlockHalfSlab)(new BlockBlastSlab(3977, false)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("rubysingle").setCreativeTab(CreativeTabs.tabBlock).setTextureName("blastblock:concrete");
+		blastsingle = (BlockHalfSlab)(new BlockBlastSlab(3977, false)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("rubysingle").setCreativeTab(tabBlastBlock).setTextureName("blastblock:concrete");
 
 		blastLampOn = new BlockBlastLamp(3978, true).setHardness(5.0F).setResistance(2000.0F).setLightValue(1.0F).setUnlocalizedName("blastblock:blastlampActive").setTextureName("blastblock:lampActive");
-		blastLampOff = new BlockBlastLamp(3979, false).setHardness(5.0F).setResistance(2000.0F).setCreativeTab(CreativeTabs.tabBlock).setUnlocalizedName("blastblock:blastlampIdle").setTextureName("blastblock:lampIdle");
-		
+		blastLampOff = new BlockBlastLamp(3979, false).setHardness(5.0F).setResistance(2000.0F).setCreativeTab(tabBlastBlock).setUnlocalizedName("blastblock:blastlampIdle").setTextureName("blastblock:lampIdle");
+
 		//Block Registry
 		GameRegistry.registerBlock(blastblock, "blastblock");
 		GameRegistry.registerBlock(blastlight, "blastlight");
@@ -67,6 +76,9 @@ public class BlastBlock {
 		LanguageRegistry.addName(blastlight, "Blast Resistant Light");
 		LanguageRegistry.addName(blastLampOff, "Blast Resistant Powered Light");
 		LanguageRegistry.addName(blastLampOn, "Blast Resistant Powered Light");
+		
+		//Non-Block/Item Related Language Registry
+		LanguageRegistry.instance().addStringLocalization("itemGroup.tabCustom", "en_US", "BlastBlock");
 
 		//Crafting Recipes
 		GameRegistry.addRecipe(new ItemStack(blastblock), "xxx", "iii", "xxx" , 'x', Block.stone, 'i', Block.obsidian);
