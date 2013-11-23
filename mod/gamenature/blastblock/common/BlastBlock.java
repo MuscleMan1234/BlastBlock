@@ -18,8 +18,8 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "blastblock", name = "Blast Block", version = "1.6.4A")
-@NetworkMod(clientSideRequired = true, serverSideRequired = false, versionBounds = "[1.6.4A]")
+@Mod(modid = "blastblock", name = "Blast Block", version = "1.6.4B")
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, versionBounds = "[1.6.4B]")
 
 public class BlastBlock {
 
@@ -53,11 +53,9 @@ public class BlastBlock {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 
-
-
 		//Block Declares go here!
 		blastblock = new BlockBlastBlock(3974, "blastblock").setUnlocalizedName("blastblock:blast").setCreativeTab(tabBlastBlock).setTextureName("blastblock:concrete");
-		blastlight= new BlockBlastLight(3975, "blastblock").setUnlocalizedName("blastblock:blastlight").setCreativeTab(tabBlastBlock).setLightValue(1.0F).setTextureName("blastblock:light");
+		blastlight = new BlockBlastLight(3975, "blastblock").setUnlocalizedName("blastblock:blastlight").setCreativeTab(tabBlastBlock).setLightValue(1.0F).setTextureName("blastblock:light");
 
 		blastdouble = (BlockHalfSlab)(new BlockBlastSlab(3976, true)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("rubydouble").setTextureName("blastblock:concrete");
 		blastsingle = (BlockHalfSlab)(new BlockBlastSlab(3977, false)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("rubysingle").setCreativeTab(tabBlastBlock).setTextureName("blastblock:concrete");
