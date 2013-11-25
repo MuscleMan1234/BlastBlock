@@ -60,8 +60,8 @@ public class BlastBlock {
 		blastdouble = (BlockHalfSlab)(new BlockBlastSlab(3976, true)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("rubydouble").setTextureName("blastblock:concrete");
 		blastsingle = (BlockHalfSlab)(new BlockBlastSlab(3977, false)).setHardness(5.0F).setResistance(2000.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("rubysingle").setCreativeTab(tabBlastBlock).setTextureName("blastblock:concrete");
 
-		blastLampOn = new BlockBlastLamp(3978, true).setHardness(5.0F).setResistance(2000.0F).setLightValue(1.0F).setUnlocalizedName("blastblock:blastlampActive").setTextureName("blastblock:lampActive");
-		blastLampOff = new BlockBlastLamp(3979, false).setHardness(5.0F).setResistance(2000.0F).setCreativeTab(tabBlastBlock).setUnlocalizedName("blastblock:blastlampIdle").setTextureName("blastblock:lampIdle");
+		blastLampOn = new BlockBlastLamp(3978, true).setHardness(5.0F).setResistance(2000.0F).setLightValue(1.0F).setUnlocalizedName("blastblock:blastlampActive").setTextureName("blastblock:lampActive").setStepSound(Block.soundGlassFootstep);
+		blastLampOff = new BlockBlastLamp(3979, false).setHardness(5.0F).setResistance(2000.0F).setCreativeTab(tabBlastBlock).setUnlocalizedName("blastblock:blastlampIdle").setTextureName("blastblock:lampIdle").setStepSound(Block.soundGlassFootstep);
 
 		//Block Registry
 		GameRegistry.registerBlock(blastblock, "blastblock");
@@ -81,6 +81,7 @@ public class BlastBlock {
 		//Crafting Recipes
 		GameRegistry.addRecipe(new ItemStack(blastblock), "xxx", "iii", "xxx" , 'x', Block.stone, 'i', Block.obsidian);
 		GameRegistry.addRecipe(new ItemStack(blastlight, 8), "xxx", "xix", "xxx" , 'x', Block.glowStone, 'i', blastblock);
+		GameRegistry.addRecipe(new ItemStack(blastLampOff, 1), " x ","xyx"," x ", 'y', Block.redstoneLampIdle, 'x', blastblock);
 
 		//Slab Recipe
 		GameRegistry.addRecipe(new ItemStack(blastsingle,6), "xxx" , 'x', blastblock);
